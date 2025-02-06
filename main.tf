@@ -7,7 +7,6 @@ locals {
 
 resource "aws_s3_bucket" "s3_tf" {
   bucket = "${local.name_prefix}-s3-tf-bkt-${local.account_id}"
-  #checkov:skip=CKV_AWS_20:The bucket is a public static content host
   #checkov:skip=CKV2_AWS_62: "Ensure S3 buckets should have event notifications enabled"
   #checkov:skip=CKV_AWS_21: "Ensure all data stored in the S3 bucket have versioning enabled"
   #checkov:skip=CKV2_AWS_6: "Ensure that S3 bucket has a Public Access block"
